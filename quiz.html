@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz</title>
+    <script defer src="quiz.js"></script>
+    <link rel="stylesheet" href="quiz.css">
+</head>
+<body>
+    <div id="intro">
+        <h1>Welcome to my Quiz</h1> 
+        <h2 id="headerText"> State your name and take the test below to see how much you know the Bible.</h2>
+    </div>
+
+    <div id = greetingInput>
+        <input id="userName"> <br> <br>
+        <button onclick="greeting()">Submit</button>
+
+    </div>
+
+<style>
+    #intro {text-align: center; color: floralwhite; font-size: 15px }
+    #greetingInput {text-align:center; color: floralwhite;}
+    body {background-color:#1a918b;}
+
+</style>
+
+<script>
+    let userName = document.querySelector("#userName");
+    let headerText = document.querySelector("#headerText");
+    let greetingInput = document.querySelector("#greetingInput");
+
+    quiz.style.display = "none";
+
+    function greeting(){
+    headerText.innerHTML = " "
+    headerText.innerHTML = "Hello " + userName.value + ", welcome to Bible Trivia. You have 2 Minutes to answer all 6 questions correctly.";
+    greetingInput.style.display = "none"
+    }
+
+</script>
+
+<div class="container">
+    <div class="quiz-box">
+        <div id="quiz">
+            <h1>Bible Trivia </h1>
+            <div class="quiz-header">
+            <p id="scoreBox"> SCORE : 0</p>
+            <p id="count-down">2</p>
+        </div>
+
+             <div id="question-container" class="hide">
+                <div id="question">6 Question Quiz</div>
+                <div id="answer-buttons" class="btn-grid">
+            
+                <button class="btn">Answer 1</button>
+                <button class="btn">Answer 2</button>
+                <button class="btn">Answer 3</button>
+                <button class="btn">Answer 4</button>
+                <button class="btn">Answer 5</button>
+                <button class="btn">Answer 6</button>
+            </div>
+              </div>
+
+              <div class="controls">
+                <button id="start-btn" class="start-btn btn">START</button>
+                <button id="next-btn" class="next-btn btn hide">next</button>
+              </div>
+          
+            <hr>
+            <footer>
+                <p>Good Luck and may the Lord be with you!</p> 
+            </footer>
+        </div>
+    </div>
+</div>
